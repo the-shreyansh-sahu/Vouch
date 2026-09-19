@@ -1,0 +1,50 @@
+[
+  {
+    "id": "host-1",
+    "name": "Sarah Mitchell",
+    "idDocUrl": "/images/host-1-id.jpg",
+    "selfieUrl": "/images/host-1-selfie.jpg",
+    "verificationScore": 92,
+    "verified": true
+  },
+  {
+    "id": "host-2",
+    "name": "James Chen",
+    "idDocUrl": "/images/host-2-id.jpg",
+    "selfieUrl": "/images/host-2-selfie.jpg",
+    "verificationScore": 78,
+    "verified": true
+  },
+  {
+    "id": "host-3",
+    "name": "Maria Rodriguez",
+    "idDocUrl": "/images/host-3-id.jpg",
+    "selfieUrl": "/images/host-3-selfie.jpg",
+    "verificationScore": 85,
+    "verified": true
+  },
+  {
+    "id": "host-4",
+    "name": "Anonymous Host",
+    "idDocUrl": "/images/host-4-id.jpg",
+    "selfieUrl": "/images/host-4-selfie.jpg",
+    "verificationScore": 35,
+    "verified": false
+  },
+  {
+    "id": "host-5",
+    "name": "Alex Turner",
+    "idDocUrl": "/images/host-5-id.jpg",
+    "selfieUrl": "/images/host-5-selfie.jpg",
+    "verificationScore": 72,
+    "verified": true
+  },
+  {
+    "id": "host-6",
+    "name": "Jennifer Park",
+    "idDocUrl": "/images/host-6-id.jpg",
+    "selfieUrl": "/images/host-6-selfie.jpg",
+    "verificationScore": 90,
+    "verified": true
+  }
+]

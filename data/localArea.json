@@ -1,0 +1,23 @@
+[
+  {
+    "area": "Santa Monica",
+    "noiseLevel": 45,
+    "nightlifeDensity": 70,
+    "distanceToBeachKm": 0.5,
+    "familyGuestPct": 35
+  },
+  {
+    "area": "Downtown LA",
+    "noiseLevel": 75,
+    "nightlifeDensity": 90,
+    "distanceToBeachKm": 25,
+    "familyGuestPct": 15
+  },
+  {
+    "area": "Pasadena",
+    "noiseLevel": 30,
+    "nightlifeDensity": 40,
+    "distanceToBeachKm": 35,
+    "familyGuestPct": 65
+  }
+]

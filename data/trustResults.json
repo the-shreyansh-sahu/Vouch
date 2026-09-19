@@ -1,0 +1,68 @@
+[
+  {
+    "listingId": "listing-1",
+    "verificationScore": 92,
+    "fraudRiskScore": 40,
+    "fraudFlags": [
+      "Duplicate images detected: 1 photo(s) found in other listings (/images/listing-1-1.jpg)"
+    ],
+    "vibeSummary": "The user wants a single honest one-line neighborhood summary (max 15 words) for a rental listing based on the reviews and local data. The reviews mention: steps from beach, beautiful sunset views, quiet at night but close to everything, charming",
+    "vibeConfidence": 100,
+    "trustScore": 81,
+    "badgeTier": "green"
+  },
+  {
+    "listingId": "listing-2",
+    "verificationScore": 78,
+    "fraudRiskScore": 0,
+    "fraudFlags": [],
+    "vibeSummary": "The user wants a one-line neighborhood summary (max 15 words) based on the reviews and local data. The reviews mention: amazing loft, middle of everything, great restaurants and bars downstairs, super convenient location, modern and clean, excellent",
+    "vibeConfidence": 80,
+    "trustScore": 87,
+    "badgeTier": "green"
+  },
+  {
+    "listingId": "listing-3",
+    "verificationScore": 85,
+    "fraudRiskScore": 0,
+    "fraudFlags": [],
+    "vibeSummary": "The user wants a single honest one-line neighborhood summary (max 15 words) for a rental listing based on the reviews and local data. The reviews mention family-friendly, big backyard, safe neighborhood, parks nearby, close to Rose Bowl and Old",
+    "vibeConfidence": 80,
+    "trustScore": 90,
+    "badgeTier": "green"
+  },
+  {
+    "listingId": "listing-4",
+    "verificationScore": 35,
+    "fraudRiskScore": 100,
+    "fraudFlags": [
+      "Duplicate images detected: 1 photo(s) found in other listings (/images/listing-1-1.jpg)",
+      "Review burst: 3 five-star reviews within 2.0 days",
+      "Scam keywords detected: best deal ever, unbelievable value, wire transfer, deposit before viewing, act fast, price won't last"
+    ],
+    "vibeSummary": "The user wants a one-line neighborhood summary based on the provided data. The reviews appear to be promotional/scammy (wire transfer only, urgency tactics). I should ignore the reviews and focus on the local data: noise=45 (moderate",
+    "vibeConfidence": 100,
+    "trustScore": 34,
+    "badgeTier": "red"
+  },
+  {
+    "listingId": "listing-5",
+    "verificationScore": 72,
+    "fraudRiskScore": 0,
+    "fraudFlags": [],
+    "vibeSummary": "The user wants a one-line neighborhood summary (max 15 words) based on the reviews and local data. The reviews mention \"arts district\", \"creative atmosphere\", \"LA art scene\". Local data: noise=75 (high),",
+    "vibeConfidence": 80,
+    "trustScore": 85,
+    "badgeTier": "green"
+  },
+  {
+    "listingId": "listing-6",
+    "verificationScore": 90,
+    "fraudRiskScore": 0,
+    "fraudFlags": [],
+    "vibeSummary": "The user wants a one-line neighborhood summary (max 15 words) for a rental listing based on the reviews and local data. The reviews mention peaceful mountain retreat, stunning views, great hiking, quiet, close to nature trails, wonderful cabin,",
+    "vibeConfidence": 80,
+    "trustScore": 92,
+    "badgeTier": "green"
+  }
+]

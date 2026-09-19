@@ -1,0 +1,142 @@
+[
+  {
+    "id": "review-1",
+    "listingId": "listing-1",
+    "text": "Absolutely loved this place! Steps from the beach, beautiful sunset views. Host was responsive and welcoming.",
+    "rating": 5,
+    "createdAt": "2025-06-15T10:30:00Z"
+  },
+  {
+    "id": "review-2",
+    "listingId": "listing-1",
+    "text": "Perfect location for a beach vacation. The cottage is charming and has everything you need.",
+    "rating": 5,
+    "createdAt": "2025-07-22T14:15:00Z"
+  },
+  {
+    "id": "review-3",
+    "listingId": "listing-1",
+    "text": "Great stay! Would definitely book again. The area is quiet at night but close to everything.",
+    "rating": 4,
+    "createdAt": "2025-08-10T09:45:00Z"
+  },
+  {
+    "id": "review-4",
+    "listingId": "listing-1",
+    "text": "Nice place but the AC was a bit loud at night. Otherwise excellent.",
+    "rating": 4,
+    "createdAt": "2025-09-05T16:20:00Z"
+  },
+  {
+    "id": "review-5",
+    "listingId": "listing-2",
+    "text": "Amazing loft! Right in the middle of everything. Great restaurants and bars downstairs.",
+    "rating": 5,
+    "createdAt": "2025-06-10T11:00:00Z"
+  },
+  {
+    "id": "review-6",
+    "listingId": "listing-2",
+    "text": "Super convenient location. The space is modern and clean. Host communication was excellent.",
+    "rating": 5,
+    "createdAt": "2025-07-18T13:30:00Z"
+  },
+  {
+    "id": "review-7",
+    "listingId": "listing-2",
+    "text": "Loved the downtown vibe. Can be noisy on weekends but that's expected.",
+    "rating": 4,
+    "createdAt": "2025-08-25T10:00:00Z"
+  },
+  {
+    "id": "review-8",
+    "listingId": "listing-3",
+    "text": "Perfect for our family of four. Big backyard, safe neighborhood, parks nearby.",
+    "rating": 5,
+    "createdAt": "2025-05-20T12:00:00Z"
+  },
+  {
+    "id": "review-9",
+    "listingId": "listing-3",
+    "text": "Great family home. Kids loved the backyard. Close to Rose Bowl and Old Town Pasadena.",
+    "rating": 5,
+    "createdAt": "2025-07-12T15:45:00Z"
+  },
+  {
+    "id": "review-10",
+    "listingId": "listing-3",
+    "text": "Comfortable stay. The area is very family-friendly and quiet.",
+    "rating": 4,
+    "createdAt": "2025-08-30T11:30:00Z"
+  },
+  {
+    "id": "review-11",
+    "listingId": "listing-4",
+    "text": "AMAZING!!! Best deal ever! Luxury villa for cheap!",
+    "rating": 5,
+    "createdAt": "2025-09-10T08:00:00Z"
+  },
+  {
+    "id": "review-12",
+    "listingId": "listing-4",
+    "text": "Unbelievable value! Book now before price goes up!",
+    "rating": 5,
+    "createdAt": "2025-09-11T08:15:00Z"
+  },
+  {
+    "id": "review-13",
+    "listingId": "listing-4",
+    "text": "Wire transfer only but totally worth it! Incredible place!",
+    "rating": 5,
+    "createdAt": "2025-09-12T08:30:00Z"
+  },
+  {
+    "id": "review-14",
+    "listingId": "listing-4",
+    "text": "Deposit before viewing required but the photos don't lie!",
+    "rating": 5,
+    "createdAt": "2025-09-13T08:45:00Z"
+  },
+  {
+    "id": "review-15",
+    "listingId": "listing-4",
+    "text": "Act fast! This price won't last! Best vacation rental ever!",
+    "rating": 5,
+    "createdAt": "2025-09-14T09:00:00Z"
+  },
+  {
+    "id": "review-16",
+    "listingId": "listing-5",
+    "text": "Lovely studio in the arts district. Very creative atmosphere.",
+    "rating": 5,
+    "createdAt": "2025-06-05T14:00:00Z"
+  },
+  {
+    "id": "review-17",
+    "listingId": "listing-5",
+    "text": "Great location for exploring LA art scene. Host was very helpful with recommendations.",
+    "rating": 4,
+    "createdAt": "2025-07-30T11:20:00Z"
+  },
+  {
+    "id": "review-18",
+    "listingId": "listing-6",
+    "text": "Peaceful mountain retreat. Stunning views, great hiking right from the door.",
+    "rating": 5,
+    "createdAt": "2025-05-15T10:00:00Z"
+  },
+  {
+    "id": "review-19",
+    "listingId": "listing-6",
+    "text": "Exactly what we needed - quiet, beautiful, close to nature trails.",
+    "rating": 5,
+    "createdAt": "2025-07-08T13:15:00Z"
+  },
+  {
+    "id": "review-20",
+    "listingId": "listing-6",
+    "text": "Wonderful cabin. The photos don't do the views justice.",
+    "rating": 4,
+    "createdAt": "2025-08-18T09:30:00Z"
+  }
+]

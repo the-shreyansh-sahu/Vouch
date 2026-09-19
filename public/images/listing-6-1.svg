@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d9488" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <linearGradient id="overlay" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="rgba(15,23,42,0.8)" />
+      <stop offset="60%" stop-color="rgba(15,23,42,0.2)" />
+      <stop offset="100%" stop-color="rgba(15,23,42,0.0)" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#grad)" />
+  <circle cx="650" cy="150" r="220" fill="rgba(255,255,255,0.08)" />
+  <circle cx="150" cy="450" r="180" fill="rgba(255,255,255,0.05)" />
+  <g transform="translate(320, 160) scale(3.5)" opacity="0.25">
+    <path fill="#ffffff" d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+  </g>
+  <rect width="800" height="600" fill="url(#overlay)" />
+  <g transform="translate(45, 480)">
+    <rect x="-10" y="-35" width="220" height="28" rx="14" fill="rgba(255,255,255,0.2)" />
+    <text x="0" y="-16" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#ffffff" letter-spacing="1">VOUCH LOCAL RENTAL</text>
+    <text x="0" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="34" font-weight="800" fill="#ffffff">Mountain View Cabin</text>
+    <text x="0" y="50" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="400" fill="rgba(255,255,255,0.85)">Pasadena • Secluded nature getaway</text>
+  </g>
+</svg>
