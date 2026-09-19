@@ -1,9 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getListingById, saveTrustResult } from '@/lib/data';
-import { verifyHost } from '@/lib/verify/heuristics';
-import { runFraudChecks } from '@/lib/fraud';
-import { generateVibe } from '@/lib/vibe/generate';
-import { calculateTrustScore } from '@/lib/trustScore';
+import { verifyHostWithAws } from '@/lib/verify/heuristics';
+import { executeVouchTrustPipeline } from '@/lib/aws/stepfunctions';
 
 export async function GET(
   request: NextRequest,
@@ -17,27 +15,15 @@ export async function GET(
       return NextResponse.json({ error: 'Listing not found' }, { status: 404 });
     }
 
-    const [verification, fraud, vibe] = await Promise.all([
-      Promise.resolve(verifyHost(listing.hostId)),
-      Promise.resolve(runFraudChecks(listingId)),
-      generateVibe(listingId, listing.location.area)
-    ]);
-
-    const { trustScore, badgeTier } = calculateTrustScore(
-      verification.verificationScore,
-      fraud.fraudRiskScore,
-      vibe.vibeConfidence
-    );
+    // 1. Run AWS Step Functions pipeline (orchestrates Rekognition, SageMaker AI, Bedrock, DynamoDB)
+    const pipelineRes = await executeVouchTrustPipeline(listingId);
+    const hostVerify = await verifyHostWithAws(listing.hostId);
 
     const result = {
-      listingId,
-      verificationScore: verification.verificationScore,
-      fraudRiskScore: fraud.fraudRiskScore,
-      fraudFlags: fraud.flags,
-      vibeSummary: vibe.vibeSummary,
-      vibeConfidence: vibe.vibeConfidence,
-      trustScore,
-      badgeTier
+      ...pipelineRes.trustResult,
+      verificationScore: hostVerify.verificationScore,
+      awsPipelineExecutionArn: pipelineRes.executionArn,
+      awsDetails: hostVerify.awsDetails,
     };
 
     saveTrustResult(result);

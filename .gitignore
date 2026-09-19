@@ -46,3 +46,7 @@ Thumbs.db
 .vscode/
 *.swp
 *.swo
+
+#AWS Setup & Verification
+/scratch
+/scripts

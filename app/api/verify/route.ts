@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { verifyHost } from '@/lib/verify/heuristics';
+import { verifyHostWithAws } from '@/lib/verify/heuristics';
 
 export async function POST(request: NextRequest) {
   try {
@@ -10,7 +10,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'hostId is required' }, { status: 400 });
     }
 
-    const result = verifyHost(hostId);
+    const result = await verifyHostWithAws(hostId);
     return NextResponse.json(result);
   } catch (error) {
     console.error('Verification error:', error);
