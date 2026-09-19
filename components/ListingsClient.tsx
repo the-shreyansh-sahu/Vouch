@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { ScamSimulatorModal } from '@/components/ScamSimulatorModal';
 import { HostSandboxModal } from '@/components/HostSandboxModal';
 import { EmbedCodeModal } from '@/components/EmbedCodeModal';
+import { AwsConsoleModal } from '@/components/AwsConsoleModal';
 
 interface ListingsClientProps {
   initialListings: Listing[];
@@ -23,7 +24,7 @@ export function ListingsClient({ initialListings, initialTrustResults }: Listing
   const [auditProgress, setAuditProgress] = useState<string>('');
   
   // Modal state
-  const [activeModal, setActiveModal] = useState<'simulator' | 'host' | 'embed' | null>(null);
+  const [activeModal, setActiveModal] = useState<'simulator' | 'host' | 'embed' | 'aws' | null>(null);
   const [selectedListingForSim, setSelectedListingForSim] = useState<Listing>(
     initialListings.find(l => l.id === 'listing-4') || initialListings[0]
   );
@@ -93,6 +94,13 @@ export function ListingsClient({ initialListings, initialTrustResults }: Listing
 
             {/* Quick Demo Feature Triggers */}
             <div className="flex flex-wrap items-center gap-2 text-xs">
+              <button
+                onClick={() => setActiveModal('aws')}
+                className="px-3.5 py-1.5 rounded-lg bg-amber-500 text-slate-950 font-bold hover:bg-amber-400 transition-all shadow-md shadow-amber-500/20 flex items-center gap-1.5 border border-amber-400"
+              >
+                <span>☁️ AWS Cloud Console</span>
+              </button>
+
               <button
                 onClick={() => setActiveModal('simulator')}
                 className="px-3 py-1.5 rounded-lg bg-amber-100 text-amber-900 hover:bg-amber-200 font-semibold transition-colors flex items-center gap-1 border border-amber-300"
@@ -305,6 +313,12 @@ export function ListingsClient({ initialListings, initialTrustResults }: Listing
           onClose={() => setActiveModal(null)}
         />
       )}
+
+      <AwsConsoleModal
+        isOpen={activeModal === 'aws'}
+        onClose={() => setActiveModal(null)}
+        activeListingId={selectedListingForSim.id}
+      />
     </div>
   );
 }
