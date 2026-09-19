@@ -1,6 +1,8 @@
 import { Listing, Host, Review, LocalAreaData, TrustResult } from '@/types';
 import fs from 'fs';
 import path from 'path';
+import { getAwsConfig } from './aws/config';
+import { saveTrustResultToDynamoDb } from './aws/dynamodb';
 
 const DATA_DIR = path.join(process.cwd(), 'data');
 
@@ -61,6 +63,7 @@ export function getTrustResult(listingId: string): TrustResult | undefined {
 }
 
 export function saveTrustResult(result: TrustResult): void {
+  // 1. Save to local JSON cache
   let results: TrustResult[] = [];
   try {
     results = readJsonFile<TrustResult[]>('trustResults.json');
@@ -74,6 +77,11 @@ export function saveTrustResult(result: TrustResult): void {
     results.push(result);
   }
   writeJsonFile('trustResults.json', results);
+
+  // 2. Persist to AWS DynamoDB Table
+  saveTrustResultToDynamoDb(result).catch((err) => {
+    console.warn('AWS DynamoDB async save note:', err.message);
+  });
 }
 
 export function getAllTrustResults(): TrustResult[] {
