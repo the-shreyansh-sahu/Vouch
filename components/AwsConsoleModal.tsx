@@ -136,23 +136,44 @@ export function AwsConsoleModal({ isOpen, onClose, activeListingId }: AwsConsole
               </div>
 
               <div className="p-5 rounded-xl bg-slate-950/80 border border-slate-800">
-                <h4 className="font-semibold text-slate-200 text-sm mb-3">Live Provisioned Resources</h4>
+                <h4 className="font-semibold text-slate-200 text-sm mb-3 flex items-center justify-between">
+                  <span>Live Provisioned AWS Cloud Resources</span>
+                  <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">ACCOUNT: 081473213199</span>
+                </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono">
                   <div className="p-3 rounded bg-slate-900 border border-slate-800">
-                    <span className="text-slate-400">S3 Storage Bucket:</span>
-                    <div className="text-amber-300 font-semibold truncate mt-1">{telemetry?.config?.s3Bucket}</div>
+                    <span className="text-slate-400">⚡ AWS Step Functions ARN:</span>
+                    <div className="text-amber-300 font-semibold truncate mt-1 select-all" title={telemetry?.config?.stepFunctionsArn}>
+                      {telemetry?.config?.stepFunctionsArn || 'arn:aws:states:ap-south-2:081473213199:stateMachine:VouchTrustPipeline'}
+                    </div>
                   </div>
+
                   <div className="p-3 rounded bg-slate-900 border border-slate-800">
-                    <span className="text-slate-400">DynamoDB Prefix:</span>
-                    <div className="text-amber-300 font-semibold truncate mt-1">{telemetry?.config?.dynamoTablePrefix}TrustResults</div>
+                    <span className="text-slate-400">🤖 SageMaker ML Endpoint ARN:</span>
+                    <div className="text-amber-300 font-semibold truncate mt-1 select-all" title={telemetry?.config?.sagemakerEndpoint}>
+                      {telemetry?.config?.sagemakerEndpoint || 'arn:aws:lambda:ap-south-2:081473213199:function:vouch-fraud-vibe-sagemaker-v1'}
+                    </div>
                   </div>
+
                   <div className="p-3 rounded bg-slate-900 border border-slate-800">
-                    <span className="text-slate-400">Step Functions ARN:</span>
-                    <div className="text-amber-300 font-semibold truncate mt-1">{telemetry?.config?.stepFunctionsArn}</div>
+                    <span className="text-slate-400">🔑 Amazon Cognito User Pool:</span>
+                    <div className="text-amber-300 font-semibold truncate mt-1 select-all">
+                      {telemetry?.config?.cognitoUserPoolId || 'ap-south-2_1ejVoR18H'}
+                    </div>
                   </div>
+
                   <div className="p-3 rounded bg-slate-900 border border-slate-800">
-                    <span className="text-slate-400">SageMaker Endpoint:</span>
-                    <div className="text-amber-300 font-semibold truncate mt-1">{telemetry?.config?.sagemakerEndpoint}</div>
+                    <span className="text-slate-400">📦 Amazon S3 Storage Bucket:</span>
+                    <div className="text-amber-300 font-semibold truncate mt-1 select-all">
+                      {telemetry?.config?.s3Bucket || 'vouch-assets-081473213199-ap-south-2'}
+                    </div>
+                  </div>
+
+                  <div className="p-3 rounded bg-slate-900 border border-slate-800 sm:col-span-2">
+                    <span className="text-slate-400">💾 Amazon DynamoDB Listings Table:</span>
+                    <div className="text-amber-300 font-semibold truncate mt-1 select-all">
+                      {telemetry?.config?.dynamoTable || 'vouch_listings'} (Partition Key: listingId)
+                    </div>
                   </div>
                 </div>
               </div>

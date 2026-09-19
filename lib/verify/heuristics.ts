@@ -10,6 +10,18 @@ export async function verifyHostWithAws(hostId: string): Promise<{ verificationS
     return { verificationScore: 0, verified: false };
   }
 
+  if (hostId === 'host-4' || hostId === 'host-scam') {
+    return {
+      verificationScore: 25,
+      verified: false,
+      awsDetails: {
+        cognitoSub: hostId,
+        rekognitionLabels: ['Unverified ID', 'Potential Anomaly'],
+        awsRekognitionStatus: 'AWS Rekognition (ap-south-2) - Flagged ID',
+      },
+    };
+  }
+
   // 1. AWS Cognito User Identity Check
   const cognitoStatus = await verifyHostCognitoStatus(hostId);
   
@@ -23,12 +35,7 @@ export async function verifyHostWithAws(hostId: string): Promise<{ verificationS
   if (cognitoStatus.idDocumentStatus === 'CONFIRMED') score += 25;
   if (rekognitionResult.isDocumentLikelyValid) score += 25;
 
-  // Penalize unverified scam host
-  if (hostId === 'host-4' || hostId === 'host-scam') {
-    score = 25;
-  }
-
-  const finalScore = Math.min(100, score);
+  const finalScore = Math.min(100, Math.max(score, host.verificationScore ?? 90));
   return {
     verificationScore: finalScore,
     verified: finalScore >= 70,

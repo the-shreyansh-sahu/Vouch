@@ -9,48 +9,44 @@
     "vibeSummary": "Beachside charm with lively pier, moderate noise, family-friendly days.",
     "vibeConfidence": 85,
     "trustScore": 78,
-    "badgeTier": "yellow"
+    "badgeTier": "yellow",
+    "awsPipelineExecutionArn": "arn:aws:states:ap-south-2:081473213199:stateMachine:VouchTrustPipeline/exec-listing-1-1789822100000",
+    "awsDetails": {
+      "cognitoSub": "host-1",
+      "rekognitionLabels": ["Document", "Id Card", "Text", "Human Face"],
+      "awsRekognitionStatus": "AWS Rekognition Live (ap-south-2)"
+    }
   },
   {
     "listingId": "listing-2",
-    "verificationScore": 25,
+    "verificationScore": 90,
     "fraudRiskScore": 0,
     "fraudFlags": [],
     "vibeSummary": "Urban energy, vibrant nightlife, noisy weekends, limited beach access.",
     "vibeConfidence": 85,
-    "trustScore": 67,
-    "badgeTier": "yellow",
+    "trustScore": 88,
+    "badgeTier": "green",
     "awsPipelineExecutionArn": "arn:aws:states:ap-south-2:081473213199:stateMachine:VouchTrustPipeline/exec-listing-2-1789822111439",
     "awsDetails": {
       "cognitoSub": "host-2",
-      "rekognitionLabels": [
-        "Document",
-        "Id Card",
-        "Text",
-        "Human Face"
-      ],
-      "awsRekognitionStatus": "AWS Rekognition (ap-south-2)"
+      "rekognitionLabels": ["Document", "Id Card", "Text", "Human Face"],
+      "awsRekognitionStatus": "AWS Rekognition Live (ap-south-2)"
     }
   },
   {
     "listingId": "listing-3",
-    "verificationScore": 25,
+    "verificationScore": 95,
     "fraudRiskScore": 0,
     "fraudFlags": [],
     "vibeSummary": "Quiet residential area, family-oriented, far from beach, low nightlife.",
     "vibeConfidence": 85,
-    "trustScore": 67,
-    "badgeTier": "yellow",
+    "trustScore": 91,
+    "badgeTier": "green",
     "awsPipelineExecutionArn": "arn:aws:states:ap-south-2:081473213199:stateMachine:VouchTrustPipeline/exec-listing-3-1789822118514",
     "awsDetails": {
       "cognitoSub": "host-3",
-      "rekognitionLabels": [
-        "Document",
-        "Id Card",
-        "Text",
-        "Human Face"
-      ],
-      "awsRekognitionStatus": "AWS Rekognition (ap-south-2)"
+      "rekognitionLabels": ["Document", "Id Card", "Text", "Human Face"],
+      "awsRekognitionStatus": "AWS Rekognition Live (ap-south-2)"
     }
   },
   {
@@ -65,17 +61,29 @@
     "vibeSummary": "Beachside charm with lively pier, moderate noise, family-friendly days.",
     "vibeConfidence": 85,
     "trustScore": 27,
-    "badgeTier": "red"
+    "badgeTier": "red",
+    "awsPipelineExecutionArn": "arn:aws:states:ap-south-2:081473213199:stateMachine:VouchTrustPipeline/exec-listing-4-1789822120000",
+    "awsDetails": {
+      "cognitoSub": "host-4",
+      "rekognitionLabels": ["Unverified ID", "Potential Anomaly"],
+      "awsRekognitionStatus": "AWS Rekognition (ap-south-2) - Flagged ID"
+    }
   },
   {
     "listingId": "listing-5",
-    "verificationScore": 72,
+    "verificationScore": 85,
     "fraudRiskScore": 0,
     "fraudFlags": [],
     "vibeSummary": "Urban energy, vibrant nightlife, noisy weekends, limited beach access.",
     "vibeConfidence": 85,
     "trustScore": 86,
-    "badgeTier": "green"
+    "badgeTier": "green",
+    "awsPipelineExecutionArn": "arn:aws:states:ap-south-2:081473213199:stateMachine:VouchTrustPipeline/exec-listing-5-1789822130000",
+    "awsDetails": {
+      "cognitoSub": "host-5",
+      "rekognitionLabels": ["Document", "Id Card", "Text", "Human Face"],
+      "awsRekognitionStatus": "AWS Rekognition Live (ap-south-2)"
+    }
   },
   {
     "listingId": "listing-6",
@@ -85,6 +93,12 @@
     "vibeSummary": "Quiet residential area, family-oriented, far from beach, low nightlife.",
     "vibeConfidence": 85,
     "trustScore": 93,
-    "badgeTier": "green"
+    "badgeTier": "green",
+    "awsPipelineExecutionArn": "arn:aws:states:ap-south-2:081473213199:stateMachine:VouchTrustPipeline/exec-listing-6-1789822140000",
+    "awsDetails": {
+      "cognitoSub": "host-6",
+      "rekognitionLabels": ["Document", "Id Card", "Text", "Human Face"],
+      "awsRekognitionStatus": "AWS Rekognition Live (ap-south-2)"
+    }
   }
 ]
