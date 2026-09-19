@@ -45,7 +45,8 @@ export async function executeVouchTrustPipeline(listingId: string): Promise<Step
 
   // Orchestrate parallel pipeline states (Lambda 1: Host Verify, Lambda 2: Fraud Detect, SageMaker AI: Vibe summary)
   const listing = getListingById(listingId);
-  const hostVerification = verifyHost(listingId);
+  const hostId = listing?.hostId || 'host-1';
+  const hostVerification = verifyHost(hostId);
   const fraudResult = runFraudChecks(listingId);
   const vibeResult = await generateVibe(listingId, listing?.location?.area || 'Santa Monica');
   

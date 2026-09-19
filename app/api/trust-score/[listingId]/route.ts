@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getListingById, saveTrustResult } from '@/lib/data';
 import { verifyHostWithAws } from '@/lib/verify/heuristics';
 import { executeVouchTrustPipeline } from '@/lib/aws/stepfunctions';
+import { calculateTrustScore } from '@/lib/trustScore';
 
 export async function GET(
   request: NextRequest,
@@ -19,9 +20,17 @@ export async function GET(
     const pipelineRes = await executeVouchTrustPipeline(listingId);
     const hostVerify = await verifyHostWithAws(listing.hostId);
 
+    const { trustScore, badgeTier } = calculateTrustScore(
+      hostVerify.verificationScore,
+      pipelineRes.trustResult.fraudRiskScore,
+      pipelineRes.trustResult.vibeConfidence
+    );
+
     const result = {
       ...pipelineRes.trustResult,
       verificationScore: hostVerify.verificationScore,
+      trustScore,
+      badgeTier,
       awsPipelineExecutionArn: pipelineRes.executionArn,
       awsDetails: hostVerify.awsDetails,
     };

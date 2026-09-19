@@ -36,7 +36,7 @@ export async function generateVibe(listingId: string, area: string): Promise<{ v
     const { BedrockRuntimeClient, InvokeModelCommand } = await import('@aws-sdk/client-bedrock-runtime');
     const client = new BedrockRuntimeClient({ region: config.region });
 
-    const prompt = `System: You write a single honest one-line neighborhood summary (max 15 words) for a rental listing in ${area}.\nUser: Noise=${localData?.noiseLevel || 5}, Nightlife=${localData?.nightlifeDensity || 5}.`;
+    const prompt = `Task: Write ONLY a concise 1-sentence neighborhood vibe summary (max 15 words) for a rental in ${area}. Do NOT explain your reasoning, do NOT repeat the instructions. Output ONLY the summary.\n\nReviews Excerpts:\n${reviews.slice(0, 3).map(r => `"${r.text.substring(0, 80)}"`).join('\n')}\n\nArea Data: Noise level=${localData?.noiseLevel || 5}/10, Nightlife=${localData?.nightlifeDensity || 5}/10, Distance to beach=${localData?.distanceToBeachKm || 2}km.`;
     
     const response = await client.send(
       new InvokeModelCommand({
@@ -45,14 +45,17 @@ export async function generateVibe(listingId: string, area: string): Promise<{ v
         accept: 'application/json',
         body: JSON.stringify({
           inputText: prompt,
-          textGenerationConfig: { maxTokenCount: 50, temperature: 0.3 },
+          textGenerationConfig: { maxTokenCount: 40, temperature: 0.2 },
         }),
       })
     );
 
     const bodyStr = new TextDecoder().decode(response.body);
     const bodyJson = JSON.parse(bodyStr);
-    const vibeSummary = bodyJson.results?.[0]?.outputText?.trim();
+    let vibeSummary = bodyJson.results?.[0]?.outputText?.trim() || '';
+
+    // Clean up any remaining prompt echo/thinking prefix
+    vibeSummary = vibeSummary.replace(/^The user wants.*?(summary:|\n)/i, '').replace(/.*?(summary is:)/i, '').trim();
 
     if (vibeSummary) {
       return { vibeSummary, vibeConfidence: confidence };
